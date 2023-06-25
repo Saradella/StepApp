@@ -7,4 +7,14 @@
     <string name="daily_steps">/ 10 000</string>
     <string name="current_steps">8500</string>
 
+    <!-- Progress -->
+    <string name="calorie_burned">Spalonych kalorii</string>
+    <string name="calorie_burned_format">%d kcal</string>
+    <string name="distance_travelled">Przebytego dystansu</string>
+    <string name="distance_travelled_format">%.2f km</string>
+    <string name="total_number_of_steps">Od początku śledzenia</string>
+    <string name="total_number_of_steps_format">%i kroków</string>
+
+    <string name="reward">DZISIAJ WYGRYWASZ:</string>
+
 </resources>
