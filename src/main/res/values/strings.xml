@@ -8,12 +8,12 @@
     <string name="current_steps">8500</string>
 
     <!-- Progress -->
-    <string name="calorie_burned">Spalonych kalorii</string>
-    <string name="calorie_burned_format">%d kcal</string>
-    <string name="distance_travelled">Przebytego dystansu</string>
-    <string name="distance_travelled_format">%.2f km</string>
-    <string name="total_number_of_steps">Od początku śledzenia</string>
-    <string name="total_number_of_steps_format">%i kroków</string>
+    <string name="calorie_burned"> 1300 </string>
+    <string name="calorie_burned_format">kcal spalonych kalorii </string>
+    <string name="distance_travelled"> 8</string>
+    <string name="distance_travelled_format">km przebytego dystansu </string>
+    <string name="total_number_of_steps"> 13000 </string>
+    <string name="total_number_of_steps_format">kroków od początku śledzenia</string>
 
     <string name="reward">DZISIAJ WYGRYWASZ:</string>
 

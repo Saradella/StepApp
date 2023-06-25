@@ -146,6 +146,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/calorie_burned"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toTopOf="@+id/text_calorie_burned_label"
@@ -158,7 +159,7 @@
                         android:id="@+id/text_calorie_burned_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/calorie_burned"
+                        android:text="@string/calorie_burned_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_calorie_background"
@@ -207,7 +208,7 @@
                         app:layout_constraintStart_toStartOf="@+id/view_distance_background"
                         app:layout_constraintTop_toTopOf="@+id/view_distance_background"
                         app:srcCompat="@drawable/baseline_route_24"
-                        app:tint="?attr/colorOnPrimary" />
+                        app:tint="#BFCBC7" />
 
                     <TextView
                         android:id="@+id/text_distance_travelled"
@@ -215,6 +216,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/distance_travelled"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toTopOf="@+id/text_distance_travelled_label"
@@ -227,7 +229,7 @@
                         android:id="@+id/text_distance_travelled_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/distance_travelled"
+                        android:text="@string/distance_travelled_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_distance_background"
@@ -284,6 +286,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/total_number_of_steps"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toTopOf="@+id/text_total_number_of_steps_label"
@@ -296,7 +299,7 @@
                         android:id="@+id/text_total_number_of_steps_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/total_number_of_steps"
+                        android:text="@string/total_number_of_steps_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_total_number_of_steps"
@@ -315,8 +318,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="57dp"
                 android:layout_marginTop="50dp"
-                android:layout_marginEnd="260dp"
-                android:layout_marginBottom="486dp"
                 android:text="To process" />
 
             <TextView
@@ -328,7 +329,7 @@
                 android:text="@string/reward"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="?attr/colorOnSurface"
-                app:layout_constraintTop_toBottomOf="@+id/buttonrepr" />
+                app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_steps_label" />
 
             <ImageView
                 android:id="@+id/image_reward"
@@ -336,9 +337,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/reward"
                 app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_steps_label"
-                app:srcCompat="@drawable/lettuce1"
-                tools:layout_editor_absoluteX="84dp"
-                tools:layout_editor_absoluteY="660dp" />
+                app:srcCompat="@drawable/lettuce1" />
 
         </LinearLayout>
 
