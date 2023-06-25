@@ -14,11 +14,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 // import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
    // private var magnitudePreviousStep = 0.0
+    private lateinit var navController: NavController
     private var previousTotalSteps = 0f
     private var totalSteps = 0f
     private var running: Boolean = false
@@ -38,6 +41,11 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         loadData()
         resetSteps()
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragment) as NavHostFragment
+        navController = navHostFragment.navController
 
     }
 
