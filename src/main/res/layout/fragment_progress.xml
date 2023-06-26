@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".progress.ProgressFragment">
-
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -16,7 +16,11 @@
             android:id="@+id/progress_circular"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="109dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="15dp"
             app:cpb_background_progressbar_color="#A5A9A8"
             app:cpb_background_progressbar_width="20dp"
             app:cpb_progress="8000"
@@ -47,6 +51,21 @@
             app:layout_constraintTop_toTopOf="@+id/progress_circular"
             app:layout_constraintVertical_bias="0.629" />
 
+        <TextView
+            android:id="@+id/steps_daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/daily_steps"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/steps_current"
+            app:layout_constraintVertical_bias="0.0" />
+
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -59,9 +78,10 @@
             tools:layout_editor_absoluteX="8dp">
 
             <androidx.cardview.widget.CardView
-                style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="#AAE7D6"
                 app:cardCornerRadius="24dp">
 
@@ -99,7 +119,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/calorie_burned"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#01201D"
                         app:layout_constraintBottom_toTopOf="@+id/text_calorie_burned_label"
                         app:layout_constraintStart_toEndOf="@+id/view_calorie_background"
                         app:layout_constraintTop_toTopOf="@+id/view_calorie_background"
@@ -110,8 +132,9 @@
                         android:id="@+id/text_calorie_burned_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/calorie_burned"
+                        android:text="@string/calorie_burned_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_calorie_background"
                         app:layout_constraintStart_toStartOf="@+id/text_calorie_burned"
                         app:layout_constraintTop_toBottomOf="@+id/text_calorie_burned"
@@ -124,10 +147,11 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="#BFCBC7"
                 app:cardCornerRadius="24dp">
 
@@ -157,7 +181,7 @@
                         app:layout_constraintStart_toStartOf="@+id/view_distance_background"
                         app:layout_constraintTop_toTopOf="@+id/view_distance_background"
                         app:srcCompat="@drawable/baseline_route_24"
-                        app:tint="?attr/colorOnPrimary" />
+                        app:tint="#BFCBC7" />
 
                     <TextView
                         android:id="@+id/text_distance_travelled"
@@ -165,7 +189,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/distance_travelled"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#01201D"
                         app:layout_constraintBottom_toTopOf="@+id/text_distance_travelled_label"
                         app:layout_constraintStart_toEndOf="@+id/view_distance_background"
                         app:layout_constraintTop_toTopOf="@+id/view_distance_background"
@@ -176,8 +202,9 @@
                         android:id="@+id/text_distance_travelled_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/distance_travelled"
+                        android:text="@string/distance_travelled_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_distance_background"
                         app:layout_constraintStart_toStartOf="@+id/text_distance_travelled"
                         app:layout_constraintTop_toBottomOf="@+id/text_distance_travelled"
@@ -189,10 +216,11 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                style="@style/Widget.Material3.CardView.Filled"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 app:cardBackgroundColor="#DFDDE9"
                 app:cardCornerRadius="24dp">
 
@@ -231,19 +259,22 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginBottom="2dp"
+                        android:text="@string/total_number_of_steps"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        app:layout_constraintBottom_toTopOf="@+id/text_total_number_of_setps_label"
+                        android:textColor="#01201D"
+                        app:layout_constraintBottom_toTopOf="@+id/text_total_number_of_steps_label"
                         app:layout_constraintStart_toEndOf="@+id/view_total_number_of_steps"
                         app:layout_constraintTop_toTopOf="@+id/view_total_number_of_steps"
                         app:layout_constraintVertical_chainStyle="packed"
                         tools:text="13 000 kroków" />
 
                     <TextView
-                        android:id="@+id/text_total_number_of_setps_label"
+                        android:id="@+id/text_total_number_of_steps_label"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/total_number_of_steps"
+                        android:text="@string/total_number_of_steps_format"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="#01201D"
                         app:layout_constraintBottom_toBottomOf="@+id/view_total_number_of_steps"
                         app:layout_constraintStart_toStartOf="@+id/text_total_number_of_steps"
                         app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_steps"
@@ -263,22 +294,19 @@
                 android:text="@string/reward"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="?attr/colorOnSurface"
-                app:layout_constraintTop_toBottomOf="@+id/text_reward"/>
+                app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_steps_label" />
 
             <ImageView
                 android:id="@+id/image_reward"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/reward"
-                app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_setps_label"
-                app:srcCompat="@drawable/lettuce1"
-                tools:layout_editor_absoluteX="84dp"
-                tools:layout_editor_absoluteY="660dp" />
+                app:layout_constraintTop_toBottomOf="@+id/text_total_number_of_steps_label"
+                app:srcCompat="@drawable/lettuce1" />
 
         </LinearLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>

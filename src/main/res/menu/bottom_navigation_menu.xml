@@ -12,7 +12,7 @@
         android:title="@string/steps" />
 
     <item
-        android:id="@+id/statsFragment"
+        android:id="@+id/statisticsFragment"
         android:icon="@drawable/query_stats_24"
         android:title="@string/stats" />
 

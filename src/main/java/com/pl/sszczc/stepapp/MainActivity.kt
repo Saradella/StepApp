@@ -7,23 +7,28 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+
 // import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
    // private var magnitudePreviousStep = 0.0
+    private lateinit var navController: NavController
     private var previousTotalSteps = 0f
     private var totalSteps = 0f
     private var running: Boolean = false
     private lateinit var sensorManager: SensorManager
-    private val ACTIVITY_RECOGNITION_REQUEST_CODE: Int = 100
+    private val recognitionRequestedCode: Int = 100
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +44,17 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         resetSteps()
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        setupWithNavController(bottomNavigationView, navController)
+
     }
+
 
     private fun resetSteps() {
 
@@ -135,10 +150,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     private fun requestPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-            ActivityCompat.requestPermissions(this,
-            arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION),
-                ACTIVITY_RECOGNITION_REQUEST_CODE)
+        ActivityCompat.requestPermissions(this,
+        arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION),
+            recognitionRequestedCode)
     }
 
     private fun isPermissionGranted(): Boolean {
@@ -156,7 +170,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when(requestCode){
-            ACTIVITY_RECOGNITION_REQUEST_CODE -> {
+            recognitionRequestedCode -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)){
                    Toast.makeText(this, "Permission Granted :) ", Toast.LENGTH_SHORT).show()
                 }

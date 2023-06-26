@@ -8,7 +8,7 @@
     android:layout_marginTop="16dp"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".rewards.RewardsFragment">
+    tools:context="RewardsFragment">
 
     <TextView
         android:id="@+id/text_rewards_collected"
@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:text="@string/total_number_of_rewards"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:text="@string/rewards_number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintBaseline_toBaselineOf="@id/text_rewards_collected"
@@ -34,18 +36,20 @@
         tools:text="nagród" />
 
     <ImageView
-        android:id="@+id/image_background"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:importantForAccessibility="no"
-        android:src="@drawable/background"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="193dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="194dp"
+        android:contentDescription="@string/rewards"
+        android:src="@drawable/cookie3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id='@+id/constraint_layout_rewards'
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginBottom="-40dp"
-        app:layout_constraintBottom_toTopOf="@id/image_background" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
