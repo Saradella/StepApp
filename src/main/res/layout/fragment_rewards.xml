@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:text="@string/rewards"
+        android:text="@string/rewards_number"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="?attr/colorOnSurface"
         app:layout_constraintBaseline_toBaselineOf="@id/text_rewards_collected"

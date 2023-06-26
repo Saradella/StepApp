@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">StepApp</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Views -->
+    <string name="rewards">Nagrody</string>
+    <string name="steps">Kroki</string>
+    <string name="stats">Stats</string>
 
     <!-- Steps -->
     <string name="daily_steps">/ 10 000</string>
@@ -17,7 +20,9 @@
 
     <string name="reward">DZISIAJ WYGRYWASZ:</string>
 
+
+    <!-- Rewards -->
     <string name="total_number_of_rewards">13</string>
-    <string name="rewards"> nagród</string>
+    <string name="rewards_number"> nagród</string>
 
 </resources>
