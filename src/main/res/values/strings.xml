@@ -4,7 +4,7 @@
     <!-- Views -->
     <string name="rewards">Nagrody</string>
     <string name="steps">Kroki</string>
-    <string name="stats">Stats</string>
+    <string name="stats">Statystyki</string>
 
     <!-- Steps -->
     <string name="daily_steps">/ 10 000</string>

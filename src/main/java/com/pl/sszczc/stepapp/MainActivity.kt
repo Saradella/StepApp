@@ -16,7 +16,10 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
+
 // import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -47,7 +50,12 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             .findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        setupWithNavController(bottomNavigationView, navController)
+
     }
+
 
     private fun resetSteps() {
 

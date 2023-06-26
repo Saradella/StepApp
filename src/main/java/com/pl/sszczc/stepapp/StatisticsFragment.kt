@@ -5,8 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 
 class StatisticsFragment : Fragment() {
 
@@ -15,12 +13,8 @@ class StatisticsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_statistics, container, false)
-        val buttonstpr = view.findViewById<Button>(R.id.buttonstpr)
-        buttonstpr.setOnClickListener {
-            findNavController().navigate(R.id.action_statisticsFragment_to_progressFragment)
-        }
-        return view
+
+        return inflater.inflate(R.layout.fragment_statistics, container, false)
     }
 
 
