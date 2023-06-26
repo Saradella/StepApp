@@ -285,7 +285,6 @@
 
             </androidx.cardview.widget.CardView>
 
-
             <TextView
                 android:id="@+id/text_reward"
                 android:layout_width="match_parent"
