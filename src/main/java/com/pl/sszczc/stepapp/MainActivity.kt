@@ -7,7 +7,6 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private var totalSteps = 0f
     private var running: Boolean = false
     private lateinit var sensorManager: SensorManager
-    private val ACTIVITY_RECOGNITION_REQUEST_CODE: Int = 100
+    private val recognitionRequestedCode: Int = 100
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -151,10 +150,9 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     }
 
     private fun requestPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-            ActivityCompat.requestPermissions(this,
-            arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION),
-                ACTIVITY_RECOGNITION_REQUEST_CODE)
+        ActivityCompat.requestPermissions(this,
+        arrayOf(android.Manifest.permission.ACTIVITY_RECOGNITION),
+            recognitionRequestedCode)
     }
 
     private fun isPermissionGranted(): Boolean {
@@ -172,7 +170,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
         when(requestCode){
-            ACTIVITY_RECOGNITION_REQUEST_CODE -> {
+            recognitionRequestedCode -> {
                 if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)){
                    Toast.makeText(this, "Permission Granted :) ", Toast.LENGTH_SHORT).show()
                 }
