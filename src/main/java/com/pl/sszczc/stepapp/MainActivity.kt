@@ -21,7 +21,7 @@ import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
 // import kotlin.math.sqrt
 
-class MainActivity : AppCompatActivity(), SensorEventListener {
+class MainActivity : AppCompatActivity() { // SensorEventListener
    // private var magnitudePreviousStep = 0.0
     private lateinit var navController: NavController
     private var previousTotalSteps = 0f
@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         loadData()
         resetSteps()
-        sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+       // sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
 
         val navHostFragment = supportFragmentManager
@@ -68,86 +68,86 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         previousTotalSteps = savedNo
     }
 
-    override fun onSensorChanged(event: SensorEvent?) {
-        val stepsTaken = findViewById<TextView>(R.id.steps_current)
-        val circularBar = findViewById<CircularProgressBar>(R.id.progress_circular)
-
-
-        // czy telefon jest w ruchu?
-
-//        // dla samsunga
-//        if (event!!.sensor.type == Sensor.TYPE_ACCELEROMETER){
-//            val xaccel: Float = event.values[0]
-//            val yaccel: Float = event.values[1]
-//            val zaccel: Float = event.values[2]
-//            val magnitude: Double = sqrt((xaccel * xaccel + yaccel * yaccel + zaccel * zaccel).toDouble())
+//    override fun onSensorChanged(event: SensorEvent?) {
+//        val stepsTaken = findViewById<TextView>(R.id.steps_current)
+//        val circularBar = findViewById<CircularProgressBar>(R.id.progress_circular)
 //
-//            val magnitudeDelta: Double = magnitude - magnitudePreviousStep
-//            magnitudePreviousStep = magnitude
 //
-//            if (magnitudeDelta > 6) {
-//                totalSteps++
-//            }
-//            val step: Int = totalSteps.toInt()
-//            stepsTaken.text = step.toString()
+//        // czy telefon jest w ruchu?
 //
+////        // dla samsunga
+////        if (event!!.sensor.type == Sensor.TYPE_ACCELEROMETER){
+////            val xaccel: Float = event.values[0]
+////            val yaccel: Float = event.values[1]
+////            val zaccel: Float = event.values[2]
+////            val magnitude: Double = sqrt((xaccel * xaccel + yaccel * yaccel + zaccel * zaccel).toDouble())
+////
+////            val magnitudeDelta: Double = magnitude - magnitudePreviousStep
+////            magnitudePreviousStep = magnitude
+////
+////            if (magnitudeDelta > 6) {
+////                totalSteps++
+////            }
+////            val step: Int = totalSteps.toInt()
+////            stepsTaken.text = step.toString()
+////
+////            circularBar.apply {
+////                setProgressWithAnimation(step.toFloat())
+////            }
+////        }
+////
+////        else {
+//            // to rozwiązanie podobno nie działa dla akcelerometru - między innymi samsung, ale na moim działa ;)
+//
+//        if (running) {
+//            totalSteps = event!!.values[0]
+//            val currentSteps = totalSteps.toInt() - previousTotalSteps.toInt()
+//            stepsTaken.text = currentSteps.toString()
 //            circularBar.apply {
-//                setProgressWithAnimation(step.toFloat())
+//                setProgressWithAnimation(currentSteps.toFloat())
 //            }
 //        }
+//        //}
+//    }
 //
-//        else {
-            // to rozwiązanie podobno nie działa dla akcelerometru - między innymi samsung, ale na moim działa ;)
-
-        if (running) {
-            totalSteps = event!!.values[0]
-            val currentSteps = totalSteps.toInt() - previousTotalSteps.toInt()
-            stepsTaken.text = currentSteps.toString()
-            circularBar.apply {
-                setProgressWithAnimation(currentSteps.toFloat())
-            }
-        }
-        //}
-    }
-
-    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        running = true
-
-        val sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-
-        val countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) // dla większości androidów
-        val detectorSensor = sensorManager.getDefaultSensor((Sensor.TYPE_STEP_DETECTOR)) // niektóre androidy mają taki sensor
-        val accelerometer = sensorManager.getDefaultSensor((Sensor.TYPE_ACCELEROMETER))  // ten zwłaszcza dla samsungów
-
-        when {
-            countSensor != null -> {
-                sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI)
-            }
-            detectorSensor != null -> {
-                sensorManager.registerListener(this, detectorSensor, SensorManager.SENSOR_DELAY_UI)
-            }
-            accelerometer != null -> {
-                sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI)
-            }
-            else -> {
-                Toast.makeText(this, "Twoje urządzenie nie jest kompatybilne.", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-
-        running = false
-
-        sensorManager.unregisterListener(this)
-    }
+//    override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
+//
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//
+//        running = true
+//
+//        val sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+//
+//        val countSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER) // dla większości androidów
+//        val detectorSensor = sensorManager.getDefaultSensor((Sensor.TYPE_STEP_DETECTOR)) // niektóre androidy mają taki sensor
+//        val accelerometer = sensorManager.getDefaultSensor((Sensor.TYPE_ACCELEROMETER))  // ten zwłaszcza dla samsungów
+//
+//        when {
+//            countSensor != null -> {
+//                sensorManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI)
+//            }
+//            detectorSensor != null -> {
+//                sensorManager.registerListener(this, detectorSensor, SensorManager.SENSOR_DELAY_UI)
+//            }
+//            accelerometer != null -> {
+//                sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_UI)
+//            }
+//            else -> {
+//                Toast.makeText(this, "Twoje urządzenie nie jest kompatybilne.", Toast.LENGTH_LONG).show()
+//            }
+//        }
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//
+//        running = false
+//
+//        sensorManager.unregisterListener(this)
+//    }
 
     private fun requestPermissions() {
         ActivityCompat.requestPermissions(this,
