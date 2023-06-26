@@ -18,7 +18,7 @@
     <string name="total_number_of_steps"> 13000 </string>
     <string name="total_number_of_steps_format">kroków od początku śledzenia</string>
 
-    <string name="reward">DZISIAJ WYGRYWASZ:</string>
+    <string name="reward">!!!DZISIAJ WYGRYWASZ:</string>
 
     <!-- Rewards -->
     <string name="total_number_of_rewards">13</string>
