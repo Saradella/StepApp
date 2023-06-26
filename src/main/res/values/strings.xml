@@ -17,4 +17,7 @@
 
     <string name="reward">DZISIAJ WYGRYWASZ:</string>
 
+    <string name="total_number_of_rewards">13</string>
+    <string name="rewards"> nagród</string>
+
 </resources>

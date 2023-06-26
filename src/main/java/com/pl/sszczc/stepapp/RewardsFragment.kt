@@ -16,10 +16,10 @@ class RewardsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_rewards, container, false)
-        val buttonrepr = view.findViewById<Button>(R.id.buttonrepr)
-        buttonrepr.setOnClickListener {
-            findNavController().navigate(R.id.action_rewardsFragment_to_progressFragment)
-        }
+//        val buttonrepr = view.findViewById<Button>(R.id.buttonrepr)
+//        buttonrepr.setOnClickListener {
+//            findNavController().navigate(R.id.action_rewardsFragment_to_progressFragment)
+//        }
         return view
     }
 
