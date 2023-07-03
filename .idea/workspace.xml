@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1873ac5a-92e1-456b-9699-518e6e4a5d10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/apple2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/cake8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/chocolate6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/cookie3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/cupcake4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/hedgehog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/icecream5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pie7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/navigation/my_nav.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pl/sszczc/stepapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pl/sszczc/stepapp/presentation/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+    <list default="true" id="875bc9af-e09e-4cf9-a91a-c93d5d5aee8b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +15,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2RhbRXRfnts6andyr5lBjcNnZyT" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2S51rN4dLag5aF46Uf5xC48BPMf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -37,17 +29,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/saras/AndroidStudioProjects/PROJEKT_APKI/app"
+    "last_opened_file_path": "/Users/katarzynaszczesna/Downloads/PROJEKT_APKI 3/app"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1873ac5a-92e1-456b-9699-518e6e4a5d10" name="Changes" comment="" />
-      <created>1687705253751</created>
+      <changelist id="875bc9af-e09e-4cf9-a91a-c93d5d5aee8b" name="Changes" comment="" />
+      <created>1688421826912</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1687705253751</updated>
+      <updated>1688421826912</updated>
     </task>
     <servers />
   </component>
