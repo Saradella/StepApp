@@ -19,10 +19,10 @@ import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
-// import kotlin.math.sqrt
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
-   // private var magnitudePreviousStep = 0.0
+    private var magnitudePreviousStep = 0.0
     private lateinit var navController: NavController
     private var previousTotalSteps = 0f
     private var totalSteps = 0f
@@ -76,38 +76,38 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         // czy telefon jest w ruchu?
 
 //        // dla samsunga
-//        if (event!!.sensor.type == Sensor.TYPE_ACCELEROMETER){
-//            val xaccel: Float = event.values[0]
-//            val yaccel: Float = event.values[1]
-//            val zaccel: Float = event.values[2]
-//            val magnitude: Double = sqrt((xaccel * xaccel + yaccel * yaccel + zaccel * zaccel).toDouble())
-//
-//            val magnitudeDelta: Double = magnitude - magnitudePreviousStep
-//            magnitudePreviousStep = magnitude
-//
-//            if (magnitudeDelta > 6) {
-//                totalSteps++
-//            }
-//            val step: Int = totalSteps.toInt()
-//            stepsTaken.text = step.toString()
-//
-//            circularBar.apply {
-//                setProgressWithAnimation(step.toFloat())
-//            }
-//        }
-//
-//        else {
+        if (event!!.sensor.type == Sensor.TYPE_ACCELEROMETER){
+            val xaccel: Float = event.values[0]
+            val yaccel: Float = event.values[1]
+            val zaccel: Float = event.values[2]
+            val magnitude: Double = sqrt((xaccel * xaccel + yaccel * yaccel + zaccel * zaccel).toDouble())
+
+            val magnitudeDelta: Double = magnitude - magnitudePreviousStep
+            magnitudePreviousStep = magnitude
+
+            if (magnitudeDelta > 6) {
+                totalSteps++
+            }
+            val step: Int = totalSteps.toInt()
+            stepsTaken.text = step.toString()
+
+            circularBar.apply {
+                setProgressWithAnimation(step.toFloat())
+            }
+        }
+
+        else {
             // to rozwiązanie podobno nie działa dla akcelerometru - między innymi samsung, ale na moim działa ;)
 
         if (running) {
-            totalSteps = event!!.values[0]
+            totalSteps = event.values[0]
             val currentSteps = totalSteps.toInt() - previousTotalSteps.toInt()
             stepsTaken.text = currentSteps.toString()
             circularBar.apply {
                 setProgressWithAnimation(currentSteps.toFloat())
             }
         }
-        //}
+        }
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
