@@ -24,5 +24,10 @@ app:startDestination="@id/progressFragment">
         android:name="com.pl.sszczc.stepapp.rewards.RewardsFragment"
         android:label="@string/rewards"
         tools:layout="@layout/fragment_rewards" />
+    <fragment
+        android:id="@+id/fragment_database"
+        android:name="com.pl.sszczc.stepapp.fragment_database"
+        android:label="fragment_database"
+        tools:layout="@layout/fragment_database" />
 
 </navigation>

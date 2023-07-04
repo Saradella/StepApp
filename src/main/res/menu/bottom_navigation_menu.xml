@@ -12,6 +12,11 @@
         android:title="@string/steps" />
 
     <item
+        android:id="@+id/fragment_database"
+        android:icon="@drawable/baseline_data_24"
+        android:title="@string/database" />
+
+    <item
         android:id="@+id/statisticsFragment"
         android:icon="@drawable/query_stats_24"
         android:title="@string/stats" />
