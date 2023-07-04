@@ -1,19 +1,21 @@
 package com.pl.sszczc.stepapp.database
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
+import java.util.*
 
 @Dao
 interface StepsDao {
 
-    @Query("SELECT * FROM steps_table ORDER BY steps ASC")
+    @Insert
+    fun insertAll(vararg users: Steps)
 
-    @Insert()
-    suspend fun insert(word: Database)
+    @Delete
+    fun delete(user: Steps)
 
-    @Query("DELETE FROM steps_table")
-    suspend fun deleteAll()
+    @Query("SELECT * FROM steps_table")
+    fun getAll(): Flow<List<Steps>>
+
+    @Update
+    fun updateUsers(vararg users: Steps)
 }
