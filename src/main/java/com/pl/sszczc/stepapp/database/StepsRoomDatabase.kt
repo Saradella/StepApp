@@ -21,7 +21,6 @@ public abstract class StepsRoomDatabase : RoomDatabase() {
             // if it is, then create the database
             if (INSTANCE == null) {
                 synchronized(this) {
-                    // Pass the database to the INSTANCE
                     INSTANCE = buildDatabase(context)
                 }
             }
