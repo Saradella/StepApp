@@ -5,10 +5,10 @@ import kotlinx.coroutines.launch
 
 class StepsViewModel(private val repository: StepsRepository) : ViewModel() {
 
-    val allWords: LiveData<List<Steps>> = repository.allSteps.asLiveData()
+    val allSteps: LiveData<List<Steps>> = repository.allSteps.asLiveData()
 
-    fun insert(word: Steps) = viewModelScope.launch { // Launching a new coroutine to insert the data in a non-blocking way
-        repository.insert(word)
+    fun insert(steps: Steps) = viewModelScope.launch { // Launching a new coroutine to insert the data in a non-blocking way
+        repository.insert(steps)
     }
 }
 
