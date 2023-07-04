@@ -1,15 +1,18 @@
 package com.pl.sszczc.stepapp
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
-import android.hardware.Sensor
-import android.hardware.SensorEvent
-import android.hardware.SensorEventListener
-import android.hardware.SensorManager
+//import android.hardware.Sensor
+//import android.hardware.SensorEvent
+//import android.hardware.SensorEventListener
+//import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
+//import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -17,7 +20,8 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.mikhaellopez.circularprogressbar.CircularProgressBar
+
+//import com.mikhaellopez.circularprogressbar.CircularProgressBar
 
 // import kotlin.math.sqrt
 
@@ -25,16 +29,22 @@ class MainActivity : AppCompatActivity() { // SensorEventListener
    // private var magnitudePreviousStep = 0.0
     private lateinit var navController: NavController
     private var previousTotalSteps = 0f
-    private var totalSteps = 0f
-    private var running: Boolean = false
-    private lateinit var sensorManager: SensorManager
+//    private var totalSteps = 0f
+//    private var running: Boolean = false
+//    private lateinit var sensorManager: SensorManager
     private val recognitionRequestedCode: Int = 100
+
+
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
+
+
+
 
         if (isPermissionGranted()){
             requestPermissions()
@@ -42,6 +52,7 @@ class MainActivity : AppCompatActivity() { // SensorEventListener
 
         loadData()
         resetSteps()
+
        // sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
 
@@ -53,7 +64,10 @@ class MainActivity : AppCompatActivity() { // SensorEventListener
 
         setupWithNavController(bottomNavigationView, navController)
 
+
+
     }
+
 
 
     private fun resetSteps() {
