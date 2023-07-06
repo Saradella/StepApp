@@ -34,7 +34,8 @@ class DatabaseActivity : AppCompatActivity() {
             val intent = Intent(this@DatabaseActivity, NewStepsActivity::class.java)
             startActivityForResult(intent, newStepsActivityRequestCode)
         }
-        StepsViewModel.allSteps.observe(this) { steps ->
+
+        StepsViewModel.allSteps.observe(owner = this) { steps ->
             steps.let { adapter.submitList(it) }
         }
     }
@@ -48,7 +49,11 @@ class DatabaseActivity : AppCompatActivity() {
                 StepsViewModel.insert(steps)
             }
         } else {
-            Toast.makeText(applicationContext, R.string.empty_not_saved, Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                applicationContext,
+                R.string.empty_not_saved,
+                Toast.LENGTH_LONG
+            ).show()
         }
     }
 }

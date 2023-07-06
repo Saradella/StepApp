@@ -52,7 +52,7 @@ abstract class StepsRoomDatabase : RoomDatabase() {
         }
 
         suspend fun populateDatabase(stepsDao: StepsDao) {
-            stepsDao.deleteAll()
+//            stepsDao.deleteAll()
 
             var steps = Steps("ble")
             stepsDao.insert(steps)
@@ -60,5 +60,7 @@ abstract class StepsRoomDatabase : RoomDatabase() {
             stepsDao.insert(steps)
         }
     }
+
+
 }
 

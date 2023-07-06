@@ -5,6 +5,7 @@
     package="com.pl.sszczc.stepapp">
     <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -27,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".database.NewStepsActivity" />
     </application>
 
 </manifest>
