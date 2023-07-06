@@ -35,4 +35,13 @@
             android:id="@+id/action_statisticsFragment_to_progressFragment"
             app:destination="@id/progressFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment_database2"
+        android:name="com.pl.sszczc.stepapp.fragment_database"
+        android:label="fragment_database"
+        tools:layout="@layout/fragment_database" >
+        <action
+            android:id="@+id/action_fragment_database2_to_progressFragment"
+            app:destination="@id/progressFragment" />
+    </fragment>
 </navigation>

@@ -4,7 +4,7 @@
     <!-- Views -->
     <string name="rewards">Nagrody</string>
     <string name="steps">Kroki</string>
-    <string name="stats">Statystyki</string>
+    <string name="stats">Baza danych</string>
 
     <!-- Steps -->
 
@@ -20,10 +20,19 @@
     <string name="total_number_of_steps"> 13000 </string>
     <string name="total_number_of_steps_format">kroków od początku śledzenia</string>
 
-    <string name="reward">DZISIAJ WYGRYWASZ:</string>
+    <string name="reward">!!!DZISIAJ WYGRYWASZ:</string>
 
     <!-- Rewards -->
     <string name="total_number_of_rewards">13</string>
     <string name="rewards_number"> nagród</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="baza_danych">Baza danych</string>
+
+    <string name="action_settings">Ustawienia</string>
+    <string name="hint_word">Wpisz liczbę kroków…</string>
+    <string name="button_save">Zapisz</string>
+    <string name="empty_not_saved">Kroki nie zapisane - puste pole</string>
+    <string name="add_steps">Dodaj kroki</string>
 
 </resources>
