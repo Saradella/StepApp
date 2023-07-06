@@ -58,11 +58,13 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
+            android:clickable="true"
+            android:minWidth="48dp"
+
+            android:minHeight="48dp"
+
             android:text="@string/daily_steps"
             android:textSize="18sp"
-
-            android:clickable="true"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintLeft_toLeftOf="parent"
