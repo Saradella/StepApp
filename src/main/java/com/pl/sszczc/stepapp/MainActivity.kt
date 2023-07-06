@@ -18,7 +18,6 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mikhaellopez.circularprogressbar.CircularProgressBar
-
 import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
@@ -30,10 +29,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var sensorManager: SensorManager
     private val recognitionRequestedCode: Int = 100
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
         if (isPermissionGranted()){
@@ -42,6 +39,7 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
 
         loadData()
         resetSteps()
+
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
 

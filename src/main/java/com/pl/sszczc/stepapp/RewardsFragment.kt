@@ -18,3 +18,12 @@ class RewardsFragment : Fragment() {
     }
 
 }
+interface RewardsUpdateListener {
+    fun onRewardsUpdate(imageResId: Int)
+}
+
+private var rewardsUpdateListener: RewardsUpdateListener? = null
+
+fun setRewardsUpdateListener(listener: RewardsUpdateListener) {
+    rewardsUpdateListener = listener
+}
