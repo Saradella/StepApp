@@ -4,8 +4,7 @@
     <!-- Views -->
     <string name="rewards">Nagrody</string>
     <string name="steps">Kroki</string>
-    <string name="database">Baza</string>
-    <string name="stats">Baza kroków</string>
+    <string name="stats">Baza danych</string>
 
     <!-- Steps -->
     <string name="daily_steps">/ 10 000</string>
